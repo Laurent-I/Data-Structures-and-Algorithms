@@ -61,22 +61,20 @@ const targetToFind = 11
 //{numberToFind: index}
 const findTwoSum = function(nums, target){
     const numsMap = {};
-    console.log({numsMap})
+    // console.log({numsMap})
 
     for(let p=0; p<nums.length; p++){
-        console.log({p, value:nums[p]})
+        // console.log({p, value:nums[p]});
+        // console.log({currentMapValue});
 
-        const currentMapValue = numsMap[nums[p]];
-        console.log({currentMapValue});
-
-        if(currentMapValue >= 0){
-            return [currentMapValue,p]
+        if(numsMap[nums[p]] >= 0){
+            return [numsMap[nums[p]],p]
         }else{
             const numberToFind = target - nums[p];
-            console.log({numberToFind});
+            // console.log({numberToFind});
 
             numsMap[numberToFind]= p;
-            console.log({numsMap})
+            // console.log({numsMap})
         }
     }
     return null;
