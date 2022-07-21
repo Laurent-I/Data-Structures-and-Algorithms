@@ -34,23 +34,23 @@
 const numsArray = [1,3,7,9,2];
 const targetToFind = 11
 //
-const findTwoSum = function(nums, target){
-    for(let p1=0; p1<nums.length; p1++){
-        console.log({p1, value: nums[p1]})
-        const numberToFind = target - nums[p1];
-        console.log({numberToFind})
-        for(let p2 = p1 + 1; p2 < nums.length; p2++){
-            console.log({p2, value: nums[p2]})
-            if(numberToFind === nums[p2]){
-                return [p1, p2];
-            }
-        }
-    }
-
-    return null;
-}
-
-console.log(findTwoSum(numsArray, targetToFind))
+// const findTwoSum = function(nums, target){
+//     for(let p1=0; p1<nums.length; p1++){
+//         console.log({p1, value: nums[p1]})
+//         const numberToFind = target - nums[p1];
+//         console.log({numberToFind})
+//         for(let p2 = p1 + 1; p2 < nums.length; p2++){
+//             console.log({p2, value: nums[p2]})
+//             if(numberToFind === nums[p2]){
+//                 return [p1, p2];
+//             }
+//         }
+//     }
+//
+//     return null;
+// }
+//
+// console.log(findTwoSum(numsArray, targetToFind))
 
 //Step 6: Test using our test cases
 //Step 7: Space and Time Complexity of our code
@@ -59,27 +59,27 @@ console.log(findTwoSum(numsArray, targetToFind))
 //////////////////////////////////////////
 //Optimal Solution
 //{numberToFind: index}
-// const findTwoSum = function(nums, target){
-//     const numsMap = {};
-//     console.log({numsMap})
-//
-//     for(let p=0; p<nums.length; p++){
-//         console.log({p, value:nums[p]})
-//
-//         const currentMapValue = numsMap[nums[p]];
-//         console.log({currentMapValue});
-//
-//         if(currentMapValue >= 0){
-//             return [currentMapValue,p]
-//         }else{
-//             const numberToFind = target - nums[p];
-//             console.log({numberToFind});
-//
-//             numsMap[numberToFind]= p;
-//             console.log({numsMap})
-//         }
-//     }
-//     return null;
-// }
-//
-// console.log(findTwoSum(numsArray, targetToFind))
+const findTwoSum = function(nums, target){
+    const numsMap = {};
+    console.log({numsMap})
+
+    for(let p=0; p<nums.length; p++){
+        console.log({p, value:nums[p]})
+
+        const currentMapValue = numsMap[nums[p]];
+        console.log({currentMapValue});
+
+        if(currentMapValue >= 0){
+            return [currentMapValue,p]
+        }else{
+            const numberToFind = target - nums[p];
+            console.log({numberToFind});
+
+            numsMap[numberToFind]= p;
+            console.log({numsMap})
+        }
+    }
+    return null;
+}
+
+console.log(findTwoSum(numsArray, targetToFind))
