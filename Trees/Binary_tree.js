@@ -71,6 +71,7 @@ class BinarySearchTree {
       }
     }
   }
+
   remove(data) {
     // root is re-initialized with
     // root of a modified tree.
@@ -120,6 +121,15 @@ class BinarySearchTree {
       this.inorder(node.left);
       console.log(node.data);
       this.inorder(node.right);
+    }
+  }
+
+  // Performs preorder traversal of a tree
+  preorder(node) {
+    if (node !== null) {
+      console.log(node.data);
+      this.preorder(node.left);
+      this.preorder(node.right);
     }
   }
 }
