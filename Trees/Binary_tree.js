@@ -151,4 +151,8 @@ class BinarySearchTree {
     if (node.left === null) return node;
     else return this.findMinNode(node.left);
   }
+  // returns root of the tree
+  getRootNode() {
+    return this.root;
+  }
 }
