@@ -192,3 +192,46 @@ BST.insert(13);
 BST.insert(5);
 BST.insert(9);
 BST.insert(27);
+
+let root = BST.getRootNode();
+BST.inorder(root);
+
+// Removing node with no children
+BST.remove(5);
+// 15
+// / \
+// 10 25
+// / \ / \
+// 7 13 22 27
+// \ /
+// 9 17
+let root = BST.getRootNode();
+// prints 7 9 10 13 15 17 22 25 27
+BST.inorder(root);
+// Removing node with one child
+BST.remove(7);
+// 15
+// / \
+// 10 25
+// / \ / \
+// 9 13 22 27
+// /
+// 17
+let root = BST.getRootNode();
+// prints 9 10 13 15 17 22 25 27
+BST.inorder(root);
+// Removing node with two children
+BST.remove(15);
+// 17
+// / \
+// 10 25
+// / \ / \
+// 9 13 22 27
+let root = BST.getRootNode();
+console.log("inorder traversal");
+// prints 9 10 13 17 22 25 27
+BST.inorder(root);
+console.log("postorder traversal");
+BST.postorder(root);
+console.log("preorder traversal");
+BST.preorder(root);
