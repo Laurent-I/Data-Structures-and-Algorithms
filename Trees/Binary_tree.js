@@ -108,4 +108,8 @@ class BinarySearchTree {
       return node;
     }
   }
+
+  findMinNode(right) {
+    return Math.min(right);
+  }
 }
