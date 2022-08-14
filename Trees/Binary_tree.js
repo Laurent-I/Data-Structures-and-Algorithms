@@ -132,4 +132,12 @@ class BinarySearchTree {
       this.preorder(node.right);
     }
   }
+  // Performs postorder traversal of a tree
+  postorder(node) {
+    if (node !== null) {
+      this.postorder(node.left);
+      this.postorder(node.right);
+      console.log(node.data);
+    }
+  }
 }
