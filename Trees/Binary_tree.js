@@ -50,25 +50,31 @@ class BinarySearchTree {
       this.root = newNode;
       //If the root is not null call the insertNode method for proper insertion of the node
     } else {
-      this.insertNode(this.root, data);
+      this.insertNode(this.root, newNode);
     }
   }
 
+  // Method to insert a node in a tree
+  // it moves over the tree to find the location
+  // to insert a node with a given data
   insertNode(node, newNode) {
-    // if the newNode is less than the root or current node then we move left until we find a null space to insert the new node
+    // if the data is less than the node
+    // data move left of the tree
     if (newNode.data < node.data) {
-      if (node.left == null) {
-        node.left = newNode;
-        // we recur until we find a null value
-      } else {
-        this.insertNode(node.left, newNode);
-      }
-    } else {
-      if (node.right == null) {
-        node.right = newNode;
-      } else {
-        this.insertNode(node.right, newNode);
-      }
+      // if left is null insert node here
+      if (node.left === null) node.left = newNode;
+      // if left is not null recur until
+      // null is found
+      else this.insertNode(node.left, newNode);
+    }
+    // if the data is more than the node
+    // data move right of the tree
+    else {
+      // if right is null insert node here
+      if (node.right === null) node.right = newNode;
+      // if right is not null recur until
+      // null is found
+      else this.insertNode(node.right, newNode);
     }
   }
 
@@ -171,3 +177,18 @@ class BinarySearchTree {
     else return node;
   }
 }
+
+// create an object for the BinarySearchTree
+let BST = new BinarySearchTree();
+
+// Inserting nodes to the BinarySearchTree
+BST.insert(15);
+BST.insert(25);
+BST.insert(10);
+BST.insert(7);
+BST.insert(22);
+BST.insert(17);
+BST.insert(13);
+BST.insert(5);
+BST.insert(9);
+BST.insert(27);
