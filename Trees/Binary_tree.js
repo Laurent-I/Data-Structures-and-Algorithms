@@ -112,4 +112,14 @@ class BinarySearchTree {
   findMinNode(right) {
     return Math.min(right);
   }
+
+  // Tree Traversal
+  //Performs inorder traversal in a tree
+  inorder(node) {
+    if (node !== null) {
+      this.inorder(node.left);
+      console.log(node.data);
+      this.inorder(node.right);
+    }
+  }
 }
