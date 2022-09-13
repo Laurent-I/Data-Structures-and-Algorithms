@@ -42,7 +42,7 @@ class BinarySearchTree {
   // search(node, data)
 
   insert(data) {
-    // Initialise new node with the node class
+    // Initialize new node with the node class
     let newNode = new Node(data);
 
     // if root is null then the newNode becomes the root
@@ -205,7 +205,7 @@ BST.remove(5);
 // 7 13 22 27
 // \ /
 // 9 17
-let root = BST.getRootNode();
+root = BST.getRootNode();
 // prints 7 9 10 13 15 17 22 25 27
 BST.inorder(root);
 // Removing node with one child
@@ -217,7 +217,7 @@ BST.remove(7);
 // 9 13 22 27
 // /
 // 17
-let root = BST.getRootNode();
+root = BST.getRootNode();
 // prints 9 10 13 15 17 22 25 27
 BST.inorder(root);
 // Removing node with two children
@@ -227,7 +227,7 @@ BST.remove(15);
 // 10 25
 // / \ / \
 // 9 13 22 27
-let root = BST.getRootNode();
+root = BST.getRootNode();
 console.log("inorder traversal");
 // prints 9 10 13 17 22 25 27
 BST.inorder(root);
